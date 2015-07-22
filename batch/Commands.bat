@@ -18,8 +18,15 @@ Set Command=%SaidWhat%
         echo echo  cleared the chat. >>Lobby.bat
      )
      IF "%Command:~0,11%"=="!CHECKSTATS" (
+        :Tmr
+        timeout 5
+        if exist rst 
+            (
+             del rst
+            )
         echo set check==1 >OnlineList.bat
-        timeout 30
+        timeout 15
+        if exist rst goto tmr
         echo set check==0 >OnlineList.bat 
      )
      )

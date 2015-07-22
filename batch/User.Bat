@@ -17,7 +17,7 @@ timeout 1 /nobreak >nul
 call Lobby.bat
 echo.
 set /p Said=%MyName%: 
-IF "%Said%"=="hldbEns7r1ng" GOTO Chat
+IF "%Said%"=="hldbEns7r1ng" GOTO Check
 echo echo %MyName%:%Said% >>Lobby.bat
 echo %Said%>JustSaid
 echo %MyName%>Who
@@ -29,6 +29,7 @@ Call OnlineList.bat
 
 if %check%==0 GOTO Chat
 echo echo %MyName% is online >>lobby.bat
+echo "" >rst
 goto wait
 
 
