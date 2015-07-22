@@ -4,8 +4,7 @@ set /p Who=<Who
 set /p SaidWhat=<JustSaid
 set UnCaps=%SaidWhat%
 for %%i in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do call set SaidWhat=%%SaidWhat:%%i=%%i%%
-Set Command=%SaidWhat%
-
+Set Command==%SaidWhat%
 
      IF "%Command:~0,1%"=="!" (
         Echo COMMAND >JustSaid
@@ -20,8 +19,7 @@ Set Command=%SaidWhat%
      IF "%Command:~0,11%"=="!CHECKSTATS" (
         :Tmr
         timeout 5
-        if exist rst 
-            (
+        if exist rst (
              del rst
             )
         echo set check==1 >OnlineList.bat
