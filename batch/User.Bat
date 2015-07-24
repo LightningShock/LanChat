@@ -1,14 +1,14 @@
 @echo off
 if not exist OnlineList.bat echo set check=0 >onlinelist.bat
-set Version=0.1
-Title Login:
+set Version=0.5
+Title LanChat %Version%
 Echo Welcome to LanChat Version %Version%!
 echo.
 Echo Please log in....
 echo.
-set /p MyName= Your Name: 
+Set /p MyName= Username: 
+call DecryptPass.bat
 cls
-start ReadChat.bat
 echo Say somthing!
 :Chat
 cls
@@ -28,7 +28,7 @@ Call OnlineList.bat
 
 if %check%==0 GOTO Chat
 echo echo %MyName% is online >>lobby.bat
-echo L >rst
+echo. >rst
 goto wait
 
 

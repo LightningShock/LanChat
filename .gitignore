@@ -46,3 +46,4 @@ batch/Lobby.bat
 batch/OnlineList.bat
 batch/JustSaid
 batch/Who
+*.name
